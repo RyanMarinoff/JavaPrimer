@@ -1,14 +1,53 @@
-# Java Primer Information
+# Expense Reimbursement System (ERS)
+## A Revature Java Primer
+<small>Ryan Marinoff - Revature Associate (1910-oct28-wvu)</small>
 
-This initiative is an arrangement with our client, Cognizant, and everyone chosen to participate is guaranteed an interview with them after completion of the program. Your marketing will continue as it has been, meaning you will take interviews with other clients as scheduled. If not selected by the time the program is complete, you will have the Cognizant interview very shortly after.
+#### Directory Structure:
+* backend -> root of the Spring framework on Java 8 backend
+* frontend -> root of the Angular 9 frontend
+* docs -> all documentation for the project, including what was previously given
 
-- Structure: 
-    - You will complete a full-stack Java application following the attached requirements. Note: You may design your front end with the framework used during your bootcamp instead of plain JS if desired.
-You will also complete studies on the attached theoretical materials (a PDF and some PowerPoints). These are all concepts you should be familiar with. There will be assessments on this content.
-There is also a question bank for studying, and here is a GitHub repo you may use for coding examples and explanations:  https://github.com/revaturelabs/java-primer
+#### Technologies Implemented:
+- [ ] Java 1.8
+- [ ] SQL (Oracle)
+- [ ] PL/SQL (Oracle)
+- [ ] Spring MVC (Spring Boot)
+- [ ] Hibernate
+- [ ] HTML/CSS (Angular)
+- [ ] Bootstrap (Angular)
+- [ ] JavaScript (Angular)
+- [ ] AJAX (Angular)
+- [ ] JUnit
+- [ ] Java Mail
+- [ ] Log4j
+- [ ] Tomcat (Spring Boot)
+- [ ] Oracle 11g Database
 
-- Timeline: 
-    - Project demos on 2/27 and 2/28. 
-A traditional QC will be either late this week or early next week. 
-Other assessments will be conducted throughout this week and next, and you should be prepared to speak concretely on your progress in your daily stand-ups. You will be asked to show code or demo your progress prior to the official demo. 
-Interviews will begin the following Monday,  3/2.
+#### Goals Employee:
+- [ ] Login.
+- [ ] View the employee home page.
+- [ ] Logout.
+- [ ] Submit a reimbursement request.
+- [ ] View their pending reimbursement requests.
+- [ ] View their resolved reimbursement requests.
+- [ ] View their information.
+- [ ] Update their information.
+
+#### Goals Manager:
+- [ ] Login.
+- [ ] View the manager home page.
+- [ ] Logout.
+- [ ] Approve/Deny pending reimbursement requests.
+- [ ] View all pending requests of all employees.
+- [ ] View all resolved requests of all employees.
+- [ ] View reimbursement requests of a specific employee.
+- [ ] View all employees.
+
+#### Additional Goals Employee:
+- [ ] Upload an image of his/her receipt as part of the reimbursement request.
+- [ ] Receive an email when one of their reimbursement requests is resolved.
+- [ ] Reset their password.
+
+#### Additional Goals Manager:
+- [ ] View an image of the receipt of a reimbursement request.
+- [ ] Register an employee and send an email to that employee with his credentials.
