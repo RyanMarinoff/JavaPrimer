@@ -4,6 +4,7 @@ import java.util.Set;
 
 public interface EmployeeService {
 	public Employee getEmployee(String username, String password);
+	public Manager getManager(String username, String password);
 	public Employee getEmployeeById(Integer id);
 	public Set<Employee> getEmployees();
 	public void deleteEmployee(Employee employee);

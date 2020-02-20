@@ -7,8 +7,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+@Service
 public class EmployeeServiceBoot implements EmployeeService {
+	private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeServiceBoot.class);
 	@Autowired
 	private EmployeeDAO employeeDAO;
 	
@@ -18,8 +24,22 @@ public class EmployeeServiceBoot implements EmployeeService {
 	@Override
 	public Employee getEmployee(String username, String password) {
 		Employee employee = employeeDAO.getByUsernameAndPassword(username, password);
-		entityManager.detach(employee); // so that user cannot delete itself from database
+		LOGGER.debug("*******get employee: " + username + " " + password + " - " + employee);		
+
+		entityManager.detach(employee); // forces any change to require a login
 		return employee;
+	}
+	
+	@Override
+	public Manager getManager(String username, String password) {
+		Employee employee = getEmployee(username, password);
+		if(employee.getManager() != null) {
+			return null;
+		}
+		Manager manager = new Manager(employee);
+		LOGGER.debug("*******get manager after if: " + username + " " + password + " - " + manager);		
+
+		return manager;
 	}
 
 	@Override
