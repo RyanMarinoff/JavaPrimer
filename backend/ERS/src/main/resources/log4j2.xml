@@ -14,8 +14,8 @@
 
         <!-- Rolling File Appender -->
         <RollingFile name="FileAppender"
-            fileName="/home/ubuntu/Documents/eclipse/logs/log4j2-demo.log"
-            filePattern="logs/log4j2-demo-%d{yyyy-MM-dd}-%i.log">
+            fileName="logs/log4j2.log"
+            filePattern="logs/log4j2-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout>
                 <Pattern>${LOG_PATTERN}</Pattern>
             </PatternLayout>
@@ -23,7 +23,7 @@
                 <TimeBasedTriggeringPolicy interval="1" />
                 <SizeBasedTriggeringPolicy size="10MB" />
             </Policies>
-            <DefaultRolloverStrategy max="10" />
+            <DefaultRolloverStrategy max="20" />
         </RollingFile>
     </Appenders>
 
