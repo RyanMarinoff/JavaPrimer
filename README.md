@@ -8,20 +8,20 @@
 * docs -> all documentation for the project, including what was previously given
 
 #### Technologies Implemented:
-- [ ] Java 1.8
-- [ ] SQL (Oracle)
+- [x] Java 1.8
+- [x] SQL (Oracle)
 - [ ] PL/SQL (Oracle)
-- [ ] Spring MVC (Spring Boot)
-- [ ] Hibernate
-- [ ] HTML/CSS (Angular)
-- [ ] Bootstrap (Angular)
-- [ ] JavaScript (Angular)
+- [x] Spring MVC (Spring Boot)
+- [x] Hibernate
+- [x] HTML/CSS (Angular)
+- [x] Bootstrap (Angular)
+- [x] JavaScript (Angular TypeScript)
 - [ ] AJAX (Angular)
 - [ ] JUnit
 - [ ] Java Mail
-- [ ] Log4j
-- [ ] Tomcat (Spring Boot)
-- [ ] Oracle 11g Database
+- [x] Log4j
+- [x] Tomcat (Spring Boot)
+- [x] Oracle 11g Database
 
 #### Goals Employee:
 - [ ] Login.
