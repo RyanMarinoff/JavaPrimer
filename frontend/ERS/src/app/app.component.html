@@ -2,9 +2,7 @@
 <div class="container-fluid">
   <div class="row">
     <main role="main" class="col-md-12">
-      <p *ngIf="selected === 'login'">Login component</p>
-      <p *ngIf="selected === 'reimbursement'">Reimbursement Request component</p>
-      <p *ngIf="selected === 'management'">Manager component</p>
+      <router-outlet></router-outlet>
     </main>
   </div>
 </div>
