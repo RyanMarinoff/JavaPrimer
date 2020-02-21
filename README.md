@@ -1,6 +1,6 @@
 # Expense Reimbursement System (ERS)
 ## A Revature Java Primer
-<small>Ryan Marinoff - Revature Associate (1910-oct28-wvu)</small>
+<small>A proof of concept activity : Ryan Marinoff - Revature Associate (1910-oct28-wvu)</small>
 
 #### Directory Structure:
 * backend -> root of the Spring framework on Java 8 backend
