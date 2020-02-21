@@ -7,7 +7,6 @@ public class LoginInfo {
 	private Manager manager;
 	public LoginInfo() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public LoginInfo(Employee employee, Manager manager) {
 		super();

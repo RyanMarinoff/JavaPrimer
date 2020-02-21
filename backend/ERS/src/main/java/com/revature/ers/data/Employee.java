@@ -2,137 +2,85 @@ package com.revature.ers.data;
 
 import java.util.Objects;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 @Entity
-public class Employee {
-	//ID, USERNAME, PASSWORD, EMAIL, FNAME, LNAME, MANAGER_ID
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee")
-	@SequenceGenerator(name = "employee", sequenceName = "employee_seq", allocationSize = 1)
-	private Integer id;
-	private String username;
-	private String password;
-	private String email;
-	@Column(name = "fname")
-	private String first;
-	@Column(name = "lname")
-	private String last;
-	@OneToOne(fetch = FetchType.EAGER)
+public class Employee extends User {
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "manager_id")
-	private Employee manager;
+	private Manager manager;
+
 	public Employee() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+	
 	public Employee(Integer id) {
-		super();
-		this.id = id;
+		super(id);
 	}
+
 	public Employee(Integer id, String username, String password) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
+		super(id, username, password);
 	}
-	public Employee(Integer id, String username, String password, String email, String first, String last,
-			Employee manager) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.first = first;
-		this.last = last;
+	
+	public Employee(Integer id, String username, String password, String email, String first, String last, Manager manager) {
+		super(id, username, password, email, first, last);
 		this.manager = manager;
 	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getFirst() {
-		return first;
-	}
-	public void setFirst(String first) {
-		this.first = first;
-	}
-	public String getLast() {
-		return last;
-	}
-	public void setLast(String last) {
-		this.last = last;
-	}
-	public Employee getManager() {
+
+	public Manager getManager() {
 		return manager;
 	}
-	public void setManager(Employee manager) {
+
+	public void setManager(Manager manager) {
 		this.manager = manager;
 	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(email, first, id, last, manager, password, username);
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + Objects.hash(manager);
+		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
+		if (!super.equals(obj))
 			return false;
-		if (getClass() != obj.getClass())
+		if (!(obj instanceof Employee))
 			return false;
 		Employee other = (Employee) obj;
-		return Objects.equals(email, other.email) && Objects.equals(first, other.first) && Objects.equals(id, other.id)
-				&& Objects.equals(last, other.last) && Objects.equals(manager, other.manager)
-				&& Objects.equals(password, other.password) && Objects.equals(username, other.username);
+		return Objects.equals(manager, other.manager);
 	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Employee [id=");
-		builder.append(id);
+		builder.append("Employee [id=");		
+		builder.append(this.getId());
 		builder.append(", username=");
-		builder.append(username);
+		builder.append(this.getUsername());
 		builder.append(", password=");
-		builder.append(password);
+		builder.append(this.getPassword());
 		builder.append(", email=");
-		builder.append(email);
+		builder.append(this.getEmail());
 		builder.append(", first=");
-		builder.append(first);
+		builder.append(this.getFirst());
 		builder.append(", last=");
-		builder.append(last);
+		builder.append(this.getLast());
 		builder.append(", manager=");
 		builder.append(manager);
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 	
 }
